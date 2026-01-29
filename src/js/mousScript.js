@@ -1,4 +1,5 @@
-import { BASE_URL } from "../services/mousApi.js";
+const BASE_URL = window.__BASE_URL__;
+
 
 export function runMouScript(mousData) {
   const cardsEl = document.getElementById("cards");
