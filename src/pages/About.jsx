@@ -12,7 +12,7 @@ function About() {
   return (
     <div className="about-page">
       <Helmet>
-        <title>Akhil's Cloud Technology Platform LLP</title>
+        <title>About us | Learn about CITS</title>
         <meta
           name="description"
           content="Learn about CITS, a trusted manpower manufacturing unit of Akhil Cloud Technologies Platform LLP, focused on workforce excellence."

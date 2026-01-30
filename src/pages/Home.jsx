@@ -10,7 +10,7 @@ function Home() {
   return (
     <div className="home-main-wrapper">
       <Helmet>
-        <title>Akhil's Cloud Technology Platform LLP</title>
+        <title>Akhil Cloud Technology Platform LLP</title>
         <meta
           name="description"
           content="CITS is a trusted technology partner delivering deployment-ready manpower and workforce solutions for software and cloud-driven organizations."
