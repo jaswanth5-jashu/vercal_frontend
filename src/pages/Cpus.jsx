@@ -15,9 +15,11 @@ const Cpus = () => {
 
   const [successMsg, setSuccessMsg] = useState("");
   const [errorMsg, setErrorMsg] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     const formData = {
       full_name: fullNameRef.current.value,
@@ -31,27 +33,29 @@ const Cpus = () => {
     };
 
     try {
-      const response = await sendCpuInquiry(formData);
+      await sendCpuInquiry(formData);
 
-      if (response.status === 201 || response.status === 200) {
-        setSuccessMsg("Inquiry submitted successfully. Our team will contact you shortly.");
-        setErrorMsg("");
+      // ✅ SUCCESS
+      setSuccessMsg("Inquiry submitted successfully. Our team will contact you soon.");
+      setErrorMsg("");
 
-        fullNameRef.current.value = "";
-        emailRef.current.value = "";
-        phoneRef.current.value = "";
-        cpuModelRef.current.value = "";
-        quantityRef.current.value = "";
-        ramRef.current.value = "";
-        storageRef.current.value = "";
-        messageRef.current.value = "";
+      // ✅ CLEAR INPUTS
+      fullNameRef.current.value = "";
+      emailRef.current.value = "";
+      phoneRef.current.value = "";
+      cpuModelRef.current.value = "";
+      quantityRef.current.value = "";
+      ramRef.current.value = "";
+      storageRef.current.value = "";
+      messageRef.current.value = "";
 
-        setTimeout(() => setSuccessMsg(""), 4000);
-      }
+      setTimeout(() => setSuccessMsg(""), 4000);
     } catch (error) {
       console.error(error.response?.data);
       setErrorMsg("Submission failed. Please try again.");
       setSuccessMsg("");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -78,7 +82,7 @@ const Cpus = () => {
 
         <div className="sos-btns">
           <NavLink to="/services" className="sos-btn-primary">
-            Our Services <span className="sos-arrow">➜</span>
+            Our Services <i className="bi bi-arrow-right"></i>
           </NavLink>
           <NavLink to="/career" className="sos-btn-outline">
             Explore Careers
@@ -149,8 +153,20 @@ const Cpus = () => {
               </div>
             </div>
 
-            <button type="submit" className="sos-btn-primary sos-submit-btn">
-              Submit Configuration <i className="bi bi-arrow-right"></i>
+            <button
+              type="submit"
+              className="sos-btn-primary sos-submit-btn"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  Submitting <i className="bi bi-arrow-repeat"></i>
+                </>
+              ) : (
+                <>
+                  Submit Configuration <i className="bi bi-arrow-right"></i>
+                </>
+              )}
             </button>
           </form>
         </div>
