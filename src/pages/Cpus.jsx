@@ -6,6 +6,7 @@ import "../css/cpus.css";
 const Cpus = () => {
   const fullNameRef = useRef();
   const emailRef = useRef();
+  const phoneRef = useRef();
   const cpuModelRef = useRef();
   const quantityRef = useRef();
   const ramRef = useRef();
@@ -21,6 +22,7 @@ const Cpus = () => {
     const formData = {
       full_name: fullNameRef.current.value,
       email: emailRef.current.value,
+      phone:emailRef.current.value,
       cpu_model: cpuModelRef.current.value,
       quantity: quantityRef.current.value,
       ram: ramRef.current.value,
@@ -38,6 +40,7 @@ const Cpus = () => {
         // ✅ CLEAR ALL INPUTS (IMPORTANT FIX)
         fullNameRef.current.value = "";
         emailRef.current.value = "";
+        phoneRef.current.value = "";
         cpuModelRef.current.value = "";
         quantityRef.current.value = "";
         ramRef.current.value = "";
@@ -102,6 +105,11 @@ const Cpus = () => {
               <div className="sos-input-group">
                 <label>Admin Email</label>
                 <input type="email" ref={emailRef} required />
+              </div>
+
+              <div className="sos-input-group">
+                <label>Phone Number</label>
+                <input type="tel" ref={phoneRef} required />
               </div>
 
               <div className="sos-input-group">
