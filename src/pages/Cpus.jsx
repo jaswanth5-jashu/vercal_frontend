@@ -123,42 +123,42 @@ const Cpus = () => {
             <div className="sos-form-grid">
               <div className="sos-input-group">
                 <label>Full Name</label>
-                <input type="text" ref={fullNameRef} required />
+                <input type="text" ref={fullNameRef}  placeholder="Enter your full name" required />
               </div>
 
               <div className="sos-input-group">
                 <label>Admin Email</label>
-                <input type="email" ref={emailRef} required />
+                <input type="email" ref={emailRef}  placeholder="Enter admin email address" required />
               </div>
 
               <div className="sos-input-group">
                 <label>Phone Number</label>
-                <input type="text" ref={phoneRef} required />
+                <input type="text" ref={phoneRef} placeholder="Enter contact phone number" required />
               </div>
 
               <div className="sos-input-group">
                 <label>CPU Model</label>
-                <input type="text" ref={cpuModelRef} required />
+                <input type="text" ref={cpuModelRef} placeholder="e.g. Intel Xeon, AMD EPYC" required />
               </div>
 
               <div className="sos-input-group">
                 <label>Quantity</label>
-                <input type="number" ref={quantityRef} min="1" required />
+                <input type="number" ref={quantityRef} min="1" placeholder="e.g. 10" required />
               </div>
 
               <div className="sos-input-group">
                 <label>RAM</label>
-                <input type="text" ref={ramRef} required />
+                <input type="text" ref={ramRef}  placeholder="e.g. 64GB DDR5" required />
               </div>
 
               <div className="sos-input-group">
                 <label>Storage</label>
-                <input type="text" ref={storageRef} required />
+                <input type="text" ref={storageRef} placeholder="e.g. 2TB NVMe SSD" required />
               </div>
 
               <div className="sos-input-group sos-full-width">
                 <label>Use Case Details</label>
-                <textarea ref={messageRef} rows="4"></textarea>
+                <textarea ref={messageRef} rows="4" placeholder="Describe workload, performance needs, deployment environment, etc."></textarea>
               </div>
             </div>
 
