@@ -192,8 +192,8 @@ function Career() {
           <div className="form-group">
             <label>Resume / CV *</label>
             <div className="resume-box">
-              <input type="file" name="resume" required />
-              <p>Upload your resume (PDF / DOC)</p>
+             <input type="file" name="resume" accept=".pdf" required/>
+              <p>Upload your resume (PDF only)</p>
             </div>
           </div>
 
