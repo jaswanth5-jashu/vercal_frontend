@@ -109,7 +109,7 @@ const Cpus = () => {
 
               <div className="sos-input-group">
                 <label>Phone Number</label>
-                <input type="tel" ref={phoneRef} required />
+                <input type="text" ref={phoneRef} required />
               </div>
 
               <div className="sos-input-group">
