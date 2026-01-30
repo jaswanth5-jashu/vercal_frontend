@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../css/pipeline.css";
+import { Helmet } from "react-helmet-async";
 import { getProjects } from "../services/pipelineApi.js";
 import HillGraph from "../components/HillGraph.jsx"; // Using HillGraph here
 
@@ -44,6 +45,14 @@ function Pipeline() {
 
   return (
     <div className="pipeline-page">
+      <Helmet>
+        <title>Talent Pipeline | CITS Workforce Readiness</title>
+        <meta
+          name="description"
+          content="CITS maintains a strong talent pipeline delivering deployment-ready professionals for industry needs."
+        />
+      </Helmet>
+
 
       {/* Header */}
       <section className="pipeline-header">

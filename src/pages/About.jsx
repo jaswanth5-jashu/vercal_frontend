@@ -1,10 +1,7 @@
 import React from "react";
-
-// 1. CSS Imports
 import "../css/About/AboutGlobal.css"; 
-// (Anni CSS ikkade import cheyakunda, vaati respective JSX files lo import cheyandi)
+import { Helmet } from "react-helmet-async";
 
-// 2. Component Imports (Idhi meeru marchipoyaru)
 import AboutHero from "../components/About/AboutHero";
 import AboutStory from "../components/About/AboutStory";
 import AboutVision from "../components/About/AboutVision";
@@ -14,6 +11,14 @@ import AboutTimeline from "../components/About/AboutTimeline";
 function About() {
   return (
     <div className="about-page">
+      <Helmet>
+        <title>Akhil's Cloud Technology Platform LLP</title>
+        <meta
+          name="description"
+          content="Learn about CITS, a trusted manpower manufacturing unit of Akhil Cloud Technologies Platform LLP, focused on workforce excellence."
+        />
+      </Helmet>
+
       <AboutHero />
       <AboutStory />
       <AboutVision />

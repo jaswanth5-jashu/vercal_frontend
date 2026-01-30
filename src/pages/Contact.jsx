@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/contact.css";
+import { Helmet } from "react-helmet-async";
 import { sendContactMessage } from "../services/contactApi";
 import { validateContactForm } from "../utils/contactvalidate.js"; 
 
@@ -52,6 +53,14 @@ function Contact() {
 
   return (
     <div className="cps">
+      <Helmet>
+        <title>Contact CITS | Workforce Solutions Partner</title>
+        <meta
+          name="description"
+          content="Get in touch with CITS to discuss manpower requirements and workforce solutions for your organization."
+        />
+      </Helmet>
+
     <div className="cont-page">
       {/* HERO SECTION */}
       <section className="hero-contact">
@@ -82,7 +91,9 @@ function Contact() {
                 <i className="bi bi-envelope"></i>
                 <div>
                   <h4>Email</h4>
-                  <p>contact@horizonsolutions.com</p>
+                  <p>hr.team@cloudtechnologies.org.in</p>
+                  <p>management@cits.org.in</p>
+                  <p>management@cloudtechnologies.org.in</p>
                 </div>
               </div>
 
@@ -90,7 +101,7 @@ function Contact() {
                 <i className="bi bi-telephone"></i>
                 <div>
                   <h4>Phone</h4>
-                  <p>+91 98765 43210</p>
+                  <p>+91-4079692270</p>
                 </div>
               </div>
 
@@ -106,7 +117,7 @@ function Contact() {
                 <i className="bi bi-clock"></i>
                 <div>
                   <h4>Working Hours</h4>
-                  <p>Mon – Fri : 9:00 AM – 6:00 PM</p>
+                  <p>Mon – Fri : 10:00 AM – 5:30 PM</p>
                 </div>
               </div>
             </div>
@@ -168,7 +179,7 @@ function Contact() {
         <div>
           <h4>Headquarters</h4>
           <p>
-            Horizon Solutions Pvt Ltd,
+            Cloud Technologies Platform LLP ,
             <br />
             Hitech City, Hyderabad,
             <br />

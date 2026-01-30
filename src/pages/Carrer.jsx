@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../css/carrer.css";
+import { Helmet } from "react-helmet-async";
 import { validateCareerForm } from "../utils/careerValidation";
 import { createApplication } from "../services/careerApi.js";
 
@@ -35,6 +36,14 @@ function Career() {
 
   return (
     <div className="careers-page">
+      <Helmet>
+        <title>Careers at CITS | Build Your Technology Career</title>
+        <meta
+          name="description"
+          content="Explore career opportunities at CITS and grow with a trusted workforce and technology solutions partner."
+        />
+      </Helmet>
+
       {/* HERO */}
       <section className="careers-hero">
         <div className="hero-content">
@@ -150,43 +159,43 @@ function Career() {
         <form className="apply-form" onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Full Name *</label>
-            <input type="text" name="full_name" required />
+            <input type="text" name="full_name" placeholder="Enter your full name" required />
           </div>
 
           <div className="form-group">
             <label>Email Address *</label>
-            <input type="email" name="email" required />
+            <input type="email" name="email"  placeholder="Enter your email address" required />
           </div>
 
           <div className="form-group">
             <label>Phone Number *</label>
-            <input type="tel" name="phone" required />
+            <input type="tel" name="phone" pattern="[0-9]{10}" placeholder="10-digit mobile number" requiredrequired />
           </div>
 
           <div className="form-group">
             <label>College / University *</label>
-            <input type="text" name="college" required />
+            <input type="text" name="college"  placeholder="Enter your college or university name" required />
           </div>
 
           <div className="form-group half">
             <div>
               <label>CGPA *</label>
-              <input type="text" name="cgpa" required />
+              <input type="text" name="cgpa" placeholder="e.g. 8.25" step="0.01" min="0" max="10"  required />
             </div>
             <div>
               <label>Year of Passing *</label>
-              <input type="number" name="year_of_passing" required />
+              <input type="number" name="year_of_passing" placeholder="e.g. 2024" required />
             </div>
           </div>
 
           <div className="form-group">
             <label>Experience (in years)</label>
-            <input type="text" name="experience" />
+            <input type="text" name="experience" placeholder="e.g. 0, 1, 2 (leave blank if fresher)" />
           </div>
 
           <div className="form-group">
             <label>Skills *</label>
-            <input type="text" name="skills" required />
+            <input type="text" name="skills" placeholder="e.g. React, Python, AWS, Docker" required />
           </div>
 
           <div className="form-group">

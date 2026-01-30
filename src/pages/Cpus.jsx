@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { NavLink } from "react-router-dom";
 import { sendCpuInquiry } from "../services/cpuInquiryApi";
 import "../css/cpus.css";
@@ -61,6 +62,14 @@ const Cpus = () => {
 
   return (
     <>
+    <Helmet>
+        <title>CPUs | Technical Resources at CITS</title>
+        <meta
+          name="description"
+          content="Discover CITS technical resources and skilled professionals supporting software and cloud-based projects."
+        />
+    </Helmet>
+
       {/* HERO */}
       <section className="sos-hero">
         <span className="sos-hero-badge">

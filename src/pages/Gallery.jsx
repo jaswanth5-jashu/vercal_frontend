@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "../css/gallery.css";
 import { fetchGalleryImages } from "../services/galleryApi";
 
@@ -8,13 +9,13 @@ function Gallery() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // 🔹 Fetch gallery images from backend
+
   useEffect(() => {
     fetchGalleryImages()
       .then((data) => {
         setImages(data);
 
-        // 🔹 Extract unique categories dynamically
+       
         const uniqueCategories = [
           "All",
           ...new Set(data.map((item) => item.category)),
@@ -24,7 +25,6 @@ function Gallery() {
       .catch((err) => console.error("Gallery API error:", err));
   }, []);
 
-  // 🔹 Filter images based on category
   const filteredImages =
     activeCategory === "All"
       ? images
@@ -32,6 +32,14 @@ function Gallery() {
 
   return (
     <div className="gallery-page">
+      <Helmet>
+        <title>Gallery | CITS Workplace & Activities</title>
+        <meta
+          name="description"
+          content="View CITS workplace moments, training sessions, and organizational activities in our official gallery."
+        />
+      </Helmet>
+
       {/* ================= HERO ================= */}
       <section className="hero-gallery">
         <div className="gallery-hero-c">

@@ -9,8 +9,7 @@ function About() {
         <div className="about-card">
           <div className="logo-circle">CITS</div>
           <h2>
-            Akhils's Cloud Technology <br />
-            platform LLP
+            Akhils's Cloud Technology platform LLP
           </h2>
           <p>Innovating Since 2023</p>
         </div>

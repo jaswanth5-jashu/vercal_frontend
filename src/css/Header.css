@@ -133,7 +133,7 @@
 @media (max-width: 1024px) {
     .par .container { padding: 0 25px; }
     .par .nav { gap: 16px; }
-    .par .c-name { font-size: 18px; }
+    .par .c-name { font-size: 18px; margin-right: 24px; }
     .par .nav a, .par .dropdown-title { font-size: 14px; }
 }
 

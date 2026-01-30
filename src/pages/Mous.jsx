@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"; // useState add chesa
 import "../css/mous.css";
+import { Helmet } from "react-helmet-async";
 import { NavLink } from "react-router-dom";
 import { getMousApi } from "../services/mousApi.js";
 import { runMouScript } from "../js/mousScript.js";
@@ -16,6 +17,14 @@ function Mous() {
 
   return (
     <div className="mous-page">
+      <Helmet>
+        <title>MOU | CITS Partnerships & Collaborations</title>
+        <meta
+          name="description"
+          content="Explore CITS partnerships and memorandums of understanding with technology and industry leaders."
+        />
+      </Helmet>
+
       <section className="hero">
         <span className="hero-badge">
           <span className="badge-icon"><i className="bi bi-people-fill"></i></span>

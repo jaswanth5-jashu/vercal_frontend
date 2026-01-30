@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "../css/give.css";
 import { fetchWorkshops, fetchGallery } from "../services/giveApi.js";
 import AnimatedNumber from "../components/AnimatedNumbers.jsx";
@@ -40,6 +41,14 @@ function GiveBackPage() {
 
   return (
     <div className="give-back">
+      <Helmet>
+        <title>Give Back | CITS Social Responsibility</title>
+        <meta
+          name="description"
+          content="Learn how CITS contributes to community development and social responsibility initiatives."
+        />
+      </Helmet>
+
       {/* ================= COMMUNITY ================= */}
       <section className="community-section">
         <div className="badge">
