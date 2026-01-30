@@ -22,7 +22,7 @@ const Cpus = () => {
     const formData = {
       full_name: fullNameRef.current.value,
       email: emailRef.current.value,
-      phone:emailRef.current.value,
+      phone:phoneRef.current.value,
       cpu_model: cpuModelRef.current.value,
       quantity: quantityRef.current.value,
       ram: ramRef.current.value,
