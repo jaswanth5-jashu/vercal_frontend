@@ -22,7 +22,7 @@ const Cpus = () => {
     const formData = {
       full_name: fullNameRef.current.value,
       email: emailRef.current.value,
-      phone:phoneRef.current.value,
+      phone: phoneRef.current.value,
       cpu_model: cpuModelRef.current.value,
       quantity: quantityRef.current.value,
       ram: ramRef.current.value,
@@ -30,14 +30,13 @@ const Cpus = () => {
       message: messageRef.current.value,
     };
 
-   try {
-      await sendCpuInquiry(formData);
+    try {
+      const response = await sendCpuInquiry(formData);
 
-      if (response.status === 201) {
-        setSuccessMsg("✅ Submitted successfully! Our team will contact you soon.");
+      if (response.status === 201 || response.status === 200) {
+        setSuccessMsg("Inquiry submitted successfully. Our team will contact you shortly.");
         setErrorMsg("");
 
-        // ✅ CLEAR ALL INPUTS (IMPORTANT FIX)
         fullNameRef.current.value = "";
         emailRef.current.value = "";
         phoneRef.current.value = "";
@@ -47,13 +46,11 @@ const Cpus = () => {
         storageRef.current.value = "";
         messageRef.current.value = "";
 
-        // Hide success message after 4 seconds
-        setTimeout(() => {
-          setSuccessMsg("");
-        }, 4000);
+        setTimeout(() => setSuccessMsg(""), 4000);
       }
     } catch (error) {
-      setErrorMsg("❌ Failed to submit. Please try again.");
+      console.error(error.response?.data);
+      setErrorMsg("Submission failed. Please try again.");
       setSuccessMsg("");
     }
   };
@@ -68,14 +65,17 @@ const Cpus = () => {
           </span>
           <span className="sos-spancir">Strategic Alliances</span>
         </span>
+
         <h1>
           <span className="sos-white-text">Next-Gen</span>{" "}
           <span className="sos-blue-text">Processors</span>
         </h1>
+
         <p>
           Our strategic partnerships and collaborations that drive innovation
           and deliver exceptional value.
         </p>
+
         <div className="sos-btns">
           <NavLink to="/services" className="sos-btn-primary">
             Our Services <span className="sos-arrow">➜</span>
@@ -92,8 +92,19 @@ const Cpus = () => {
           <h1>Our CPU Pipeline</h1>
           <p className="sos-subtitle">Submit your custom requirements below.</p>
 
-          {successMsg && <div className="sos-success-msg">{successMsg}</div>}
-          {errorMsg && <div className="sos-error-msg">{errorMsg}</div>}
+          {successMsg && (
+            <div className="sos-success-msg">
+              <i className="bi bi-check-circle-fill"></i>
+              <span>{successMsg}</span>
+            </div>
+          )}
+
+          {errorMsg && (
+            <div className="sos-error-msg">
+              <i className="bi bi-exclamation-triangle-fill"></i>
+              <span>{errorMsg}</span>
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="sos-custom-form">
             <div className="sos-form-grid">
@@ -139,7 +150,7 @@ const Cpus = () => {
             </div>
 
             <button type="submit" className="sos-btn-primary sos-submit-btn">
-              Submit Configuration ➜
+              Submit Configuration <i className="bi bi-arrow-right"></i>
             </button>
           </form>
         </div>
@@ -150,7 +161,7 @@ const Cpus = () => {
         <h2>Interested in Our CPUs?</h2>
         <p>Contact our team to learn more about partnership opportunities.</p>
         <NavLink to="/contact" className="sos-cta-btn">
-          Contact Sales <span>→</span>
+          Contact Sales <i className="bi bi-arrow-right"></i>
         </NavLink>
       </section>
     </>
