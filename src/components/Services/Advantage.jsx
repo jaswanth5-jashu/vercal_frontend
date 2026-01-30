@@ -6,7 +6,7 @@ const Advantage = () => {
     <section className="advantage">
       <div className="adv-wrap">
         <span className="adv-tag">Why Choose Us</span>
-        <h2 className="adv-title">The Akhil’s Cloud Technology Platform LLP Advantage</h2>
+        <h2 className="adv-title">The Akhil Cloud Technology Platform LLP Advantage</h2>
         <p className="adv-sub">
           CITS provides structured manpower manufacturing and technology workforce services backed by 
           the governance, standards, and industry expertise.

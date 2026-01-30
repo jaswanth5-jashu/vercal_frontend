@@ -7,8 +7,10 @@ function Footer() {
       <footer className="ft">
         <div className="col-brand">
           <div className="logo">
-            <span className="lg">Akhil</span>
-            <h2>Cloud <span>Technology platform LLP</span></h2>
+            <span className="lg">CITS</span>
+            <p>(a unit of)</p>
+            <br />
+            <h2>Akhil <span>Cloud Technology platform LLP</span></h2>
           </div>
 
           <p className="txt">

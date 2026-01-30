@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import cits_logo_final from "../assets/cits_logo_final.png";
 import '../css/Header.css';
 function Header() {
   return (
@@ -6,7 +7,7 @@ function Header() {
     <header className="header">
       <div className="container">
         <div className="logo">
-          <p className="c-name">Akhils's Cloud Technology platform LLP</p>
+             <img src={cits_logo_final} alt="CITS Logo" className="c-name"/>
         </div>
         <div className="nav">
           <NavLink to="/">Home</NavLink>

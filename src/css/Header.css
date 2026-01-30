@@ -27,12 +27,8 @@
 }
 
 .par .c-name {
-    font-size: 20px;
-    font-weight: 700;
-    color: rgb(8, 8, 92);
-    white-space: nowrap;
-    text-decoration: none;
-    flex-shrink: 0;
+    width: 150px;
+    margin-top: 3px;
 }
 
 .par .nav {
